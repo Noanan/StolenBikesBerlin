@@ -10,7 +10,11 @@ export class Bike extends Model<Bike> {
 
   @Column
   ownerLastName: string;
+
+  @Column({ defaultValue: false })
+  resolved: boolean;
+
+  @Column({ defaultValue: false })
+  hasOfficer: boolean;
   
-  @Column({ defaultValue: true })
-  isMissing: boolean;
 }

@@ -4,5 +4,7 @@ export class CreateOfficerDto {
 
   lastName: string;
 
-  isFree: boolean;
+  caseID: string;
+
+  available: boolean;
 }

@@ -7,7 +7,10 @@ export class Officer extends Model<Officer> {
 
   @Column
   lastName: string;
+  
+  @Column({ defaultValue: null })
+  caseID: string;
 
   @Column({ defaultValue: true })
-  isFree: boolean;
+  available: boolean;
 }

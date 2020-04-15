@@ -26,8 +26,11 @@ import { Officer } from './officers/officers.model';
     }),
     BikesModule,
     OfficersModule,
+    
 
   ],
+  controllers: [AppController],
+  providers: [AppService]
 
 })
 

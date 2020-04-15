@@ -6,7 +6,9 @@ export class CreateBikeDto {
 
   ownerLastName: string;
 
-  isMissing: boolean;
+  resolved: boolean;
+
+  hasOfficer: boolean;
 
   
 }
