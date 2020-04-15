@@ -10,4 +10,7 @@ export class AppService {
   }
   
   constructor(private sequelize: Sequelize) {}
+
+
+  
 }

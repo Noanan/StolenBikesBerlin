@@ -1,12 +1,13 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { BikesModule } from './bikes/bikes.module';
-
-
 
 import { SequelizeModule } from '@nestjs/sequelize';
+
+import { BikesModule } from './bikes/bikes.module';
 import { Bike } from './bikes/bikes.model';
+import { OfficersModule } from './officers/officers.module';
+import { Officer } from './officers/officers.model';
 
 
 @Module({
@@ -21,9 +22,10 @@ import { Bike } from './bikes/bikes.model';
       database: 'test',
       autoLoadModels: true,
       synchronize: true,
-      models: [Bike],
+      models: [Bike, Officer],
     }),
     BikesModule,
+    OfficersModule,
 
   ],
 

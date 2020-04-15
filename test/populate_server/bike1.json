@@ -1,0 +1,6 @@
+{
+   "bikeID":"string",
+   "ownerFirstName":"string",
+   "ownerLastName":"string",
+   "isMissing":"1"
+}

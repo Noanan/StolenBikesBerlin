@@ -3,11 +3,14 @@ import { Column, Model, Table } from 'sequelize-typescript';
 @Table
 export class Bike extends Model<Bike> {
   @Column
-  firstName: string;
+  bikeID: string;
 
   @Column
-  lastName: string;
+  ownerFirstName: string;
 
+  @Column
+  ownerLastName: string;
+  
   @Column({ defaultValue: true })
-  isActive: boolean;
+  isMissing: boolean;
 }

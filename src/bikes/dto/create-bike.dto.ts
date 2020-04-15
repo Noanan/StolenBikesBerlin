@@ -1,7 +1,12 @@
 export class CreateBikeDto {
 
-  firstName: string;
+  bikeID: string;
 
-  lastName: string;
+  ownerFirstName: string;
 
+  ownerLastName: string;
+
+  isMissing: boolean;
+
+  
 }

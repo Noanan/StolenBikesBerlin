@@ -20,8 +20,11 @@ export class BikesService {
 
     create(createBikeDto: CreateBikeDto): Promise<Bike> {
         const bike = new Bike();
-        bike.firstName = createBikeDto.firstName;
-        bike.lastName = createBikeDto.lastName;
+        bike.bikeID = createBikeDto.bikeID;
+        bike.ownerFirstName = createBikeDto.ownerFirstName;
+        bike.ownerLastName = createBikeDto.ownerLastName;
+        bike.isMissing = createBikeDto.isMissing
+
         return bike.save();
 
     }
@@ -29,29 +32,7 @@ export class BikesService {
 
 
     async findAll(): Promise<Bike[]> {
-        try {
-            await this.sequelize.transaction(async t => {
-                const transactionHost = { transaction: t };
-                await this.bikeModel.create(
-                    { firstName: 'Abraham', lastName: 'Lincoln' },
-                    transactionHost,
-
-                );
-                await this.bikeModel.create(
-                    { firstName: 'John', lastName: 'Boothe' },
-                    transactionHost,
-
-                );
-
-            });
-
-        } catch (err) {
-            // Transaction has been rolled back
-            // err is whatever rejected the promise chain returned to the transaction callback
-        }
-
         return this.bikeModel.findAll();
-
     }
 
 
@@ -60,17 +41,12 @@ export class BikesService {
         return this.bikeModel.findOne({
             where: {id,
             },
-
         });
 
     }
-
-
-
     async remove(id: string): Promise<void> {
         const bike = await this.findOne(id);
         await bike.destroy();
-
     }
 
 }
