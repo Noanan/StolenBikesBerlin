@@ -1,75 +1,49 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
-</p>
+# Stolen Bike Cases - viAct - Backend (NestJS)
+## Context
+Stolen bikes are a typical problem in Berlin. The Police want to be more efficient in resolving stolen bike cases. They decided to build software that can automate their processes — the software that you're going to develop.
+## Product Requirements
+* Bike owners can report a stolen bike.
+* New stolen bike cases should be automatically assigned to any free police officer. 
+* A police officer can only handle one stolen bike case at a time.
+* When the Police find a bike, the case is marked as resolved and the responsible police officer becomes available to take a new stolen bike case.
+* The system should be able to assign unassigned stolen bike cases automatically when a police officer becomes available.
+## Your Mission
+Your task is to provide APIs for a frontend application that satisfies all requirements above.
 
-[travis-image]: https://api.travis-ci.org/nestjs/nest.svg?branch=master
-[travis-url]: https://travis-ci.org/nestjs/nest
-[linux-image]: https://img.shields.io/travis/nestjs/nest/master.svg?label=linux
-[linux-url]: https://travis-ci.org/nestjs/nest
-  
-  <p align="center">A progressive <a href="http://nodejs.org" target="blank">Node.js</a> framework for building efficient and scalable server-side applications, heavily inspired by <a href="https://angular.io" target="blank">Angular</a>.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/dm/@nestjs/core.svg" alt="NPM Downloads" /></a>
-<a href="https://travis-ci.org/nestjs/nest"><img src="https://api.travis-ci.org/nestjs/nest.svg?branch=master" alt="Travis" /></a>
-<a href="https://travis-ci.org/nestjs/nest"><img src="https://img.shields.io/travis/nestjs/nest/master.svg?label=linux" alt="Linux" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#5" alt="Coverage" /></a>
-<a href="https://gitter.im/nestjs/nestjs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge"><img src="https://badges.gitter.im/nestjs/nestjs.svg" alt="Gitter" /></a>
-<a href="https://opencollective.com/nest#backer"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec"><img src="https://img.shields.io/badge/Donate-PayPal-dc3d53.svg"/></a>
-  <a href="https://twitter.com/nestframework"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+---
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
 ## Installation
 
-```bash
-$ npm install
-```
+Clone the repository using `$git clone git@github.com:Noanan/StolenBikesBerlin.git`, then nagivate to it and use `npm install` to install the modules and dependencies
 
-## Running the app
+## Running
+This API uses Docker to create a MySql2 database 
 
-```bash
-# development
-$ npm run start
+### Docker
 
-# watch mode
-$ npm run start:dev
+There is a `docker-compose.yml` file for starting Docker.
 
-# production mode
-$ npm run start:prod
-```
+`docker-compose up`
 
-## Test
+After running the sample, you can stop the Docker container with
 
-```bash
-# unit tests
-$ npm run test
+`docker-compose down`
 
-# e2e tests
-$ npm run test:e2e
+### Run the sample
 
-# test coverage
-$ npm run test:cov
-```
+Then, run Nest as usual:
 
-## Support
+`npm run start`
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+## Documentation
 
-## Stay in touch
+The supporting documentation can be found at: https://app.swaggerhub.com/apis-docs/no45/StolenBikesBerlin/1.0.0
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+## Testing
 
-## License
+The e2e test suite can be run using `npm run test`. Lastest benchmark of major requirements: https://prnt.sc/s0mqpc
 
-  Nest is [MIT licensed](LICENSE).
+A batch script found in `StolenBikesBerlin\src\test\e2e` can be use to populate the server with example bikes and officers to test simulation with the API
+
