@@ -28,6 +28,11 @@ export class OfficersController {
     return this.officersService.OfficerisBusy(id);
   }
 
+  @Get('case/:caseID')
+  findOneCaseID(@Param('caseID') caseID: string): Promise<Officer> {
+    return this.officersService.findOneCaseID(caseID);
+  }
+
   @Get(':id/setOfficerCaseId/:caseID')
   setOfficerCaseId(@Param('id') id: string,@Param('caseID') caseID: string, ): Promise<void> {
     return this.officersService.setOfficerCaseId(id,caseID);

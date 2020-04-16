@@ -92,6 +92,12 @@ export class BikesService {
           });
     }
 
+    findOneBikeID(bikeID: string): Promise<Bike> {
+        return this.bikeModel.findOne({
+            where: {bikeID,
+            },
+        });
+    }
   
 
     findOne(id: string): Promise<Bike> {

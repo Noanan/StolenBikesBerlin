@@ -74,8 +74,15 @@ export class OfficersService {
             where: {id,
             },
         });
-
     }
+    findOneCaseID(caseID: string): Promise<Officer> {
+        return this.officerModel.findOne({
+            where: {caseID,
+            },
+        });
+    }
+
+
     async remove(id: string): Promise<void> {
         const officer = await this.findOne(id);
         await officer.destroy();

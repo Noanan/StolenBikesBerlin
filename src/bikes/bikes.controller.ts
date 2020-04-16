@@ -1,5 +1,5 @@
-import { Body, Controller, Delete, Get, Param, Post, Put,Redirect } from '@nestjs/common';
-import { InjectModel } from '@nestjs/sequelize';
+import { Body, Controller, Delete, Get, Param, Post, } from '@nestjs/common';
+
 import { CreateBikeDto } from './dto/create-bike.dto';
 
 import { Bike } from './bikes.model';
@@ -55,6 +55,12 @@ export class BikesController {
   countAllNoOfficer() {
     return this.bikesService.countAllNoOfficer();
   }
+
+  @Get('case/:bikeID')
+  findOneBikeID(@Param('bikeID') bikeID: string): Promise<Bike> {
+    return this.bikesService.findOneBikeID(bikeID);
+  }
+
 
   @Get('/FirstNoOfficer')
   findFirstNoOfficer(): Promise<Bike> {
